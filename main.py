@@ -777,13 +777,13 @@ async def txt_handler(bot: Client, m: Message):
 
             elif "https://cpvod.testbook.com/" in url or "classplusapp.com/drm/" in url:
                 url = url.replace("https://cpvod.testbook.com/","https://media-cdn.classplusapp.com/drm/")
-                url = f"https://itsgolu-cp-api.vercel.app/itsgolu?url={url_norm}@ITSGOLU_OFFICIAL&user_id={user_id}"
+                url = f"https://itsgolu-cp-api.vercel.app/itsgolu?url={url_norm}@ITSGOLU_OFFICIAL&user_id=6201066540"
                 mpd, keys = helper.get_mps_and_keys(url)
                 url = mpd
                 keys_string = " ".join([f"--key {key}" for key in keys])
 
             elif "classplusapp" in url:
-                signed_api = f"https://itsgolu-cp-api.vercel.app/itsgolu?url={url_norm}@ITSGOLU_OFFICIAL&user_id={user_id}"
+                signed_api = f"https://itsgolu-cp-api.vercel.app/itsgolu?url={url_norm}@ITSGOLU_OFFICIAL&user_id=6201066540"
                 response = requests.get(signed_api, timeout=40)
                 url = response.text.strip()
                 url = response.json()['url']  
@@ -795,7 +795,7 @@ async def txt_handler(bot: Client, m: Message):
                 url = response.json()['url']  
            
             elif 'videos.classplusapp' in url:
-                url = requests.get(f'https://api.classplusapp.com/cams/uploader/video/jw-signed-url?url={url}', headers={'x-access-token': f'{cptoken}'}).json()['url']
+                url = requests.get(f'https://api.classplusapp.com/cams/uploader/video/jw-signed-url?url=6201066540', headers={'x-access-token': f'{cptoken}'}).json()['url']
             
             elif 'media-cdn.classplusapp.com' in url or 'media-cdn-alisg.classplusapp.com' in url or 'media-cdn-a.classplusapp.com' in url: 
                 headers = {'host': 'api.classplusapp.com', 'x-access-token': f'{cptoken}', 'accept-language': 'EN', 'api-version': '18', 'app-version': '1.4.73.2', 'build-number': '35', 'connection': 'Keep-Alive', 'content-type': 'application/json', 'device-details': 'Xiaomi_Redmi 7_SDK-32', 'device-id': 'c28d3cb16bbdac01', 'region': 'IN', 'user-agent': 'Mobile-Android', 'webengage-luid': '00000187-6fe4-5d41-a530-26186858be4c', 'accept-encoding': 'gzip'}
@@ -1113,7 +1113,7 @@ async def text_handler(bot: Client, m: Message):
 
             elif "https://cpvod.testbook.com/" in url or "classplusapp.com/drm/" in url:
                 url = url.replace("https://cpvod.testbook.com/","https://media-cdn.classplusapp.com/drm/")
-                url = f"https://itsgolu-cp-api.vercel.app/itsgolu?url={url_norm}@ITSGOLU_OFFICIAL&user_id={user_id}"
+                url = f"https://itsgolu-cp-api.vercel.app/itsgolu?url={url_norm}@ITSGOLU_OFFICIAL&user_id=6201066540"
                 mpd, keys = helper.get_mps_and_keys(url)
                 url = mpd
                 keys_string = " ".join([f"--key {key}" for key in keys])
@@ -1168,7 +1168,7 @@ async def text_handler(bot: Client, m: Message):
                     url = base_url.replace("https://static-db-v2.classx.co.in", "https://appx-content-v2.classx.co.in")
 
             elif "classplusapp" in url:
-                signed_api = f"https://itsgolu-cp-api.vercel.app/itsgolu?url={url_norm}@ITSGOLU_OFFICIAL&user_id={user_id}"
+                signed_api = f"https://itsgolu-cp-api.vercel.app/itsgolu?url={url_norm}@ITSGOLU_OFFICIAL&user_id=6201066540"
                 response = requests.get(signed_api, timeout=20)
                 url = response.text.strip()
                 url = response.json()['url']  
